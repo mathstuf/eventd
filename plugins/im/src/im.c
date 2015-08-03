@@ -388,7 +388,7 @@ _eventd_im_global_parse(EventdPluginContext *context, GKeyFile *config_file)
 
         account->convs = g_hash_table_new_full(g_str_hash, g_str_equal, g_free, (GDestroyNotify) purple_conversation_destroy);
 
-        account->reconnect = libeventd_reconnect_new(reconnect_timeout, reconnect_max_tries, _eventd_im_account_reconnect_callback, account);
+        account->reconnect = libeventd_reconnect_new(reconnect_timeout, reconnect_max_tries, _eventd_im_account_reconnect_callback, account, NULL);
 
         account->leave_timeout = leave_timeout;
 
